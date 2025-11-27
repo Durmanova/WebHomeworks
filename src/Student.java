@@ -3,11 +3,17 @@
  */
 public class Student {
 
-    /**Поле имени студента*/
+    /**
+     * Поле имени студента
+     */
     private String name;
-    /**Поле общей суммы оценок*/
+    /**
+     * Поле общей суммы оценок
+     */
     private double totalScore;
-    /**Поле количества пройденных тестов*/
+    /**
+     * Поле количества пройденных тестов
+     */
     private int numberOfQuizzes;
 
     /***
@@ -19,11 +25,12 @@ public class Student {
         this.totalScore = 0;
         this.numberOfQuizzes = 0;
     }
+
     /***
      * Метод получения значения поля name
      * @return возвращает имя студента
      */
-    public String getName(){
+    public String getName() {
         return name;
     }
 
@@ -31,13 +38,12 @@ public class Student {
      * Метод добавления оценки за тест в общую сумму и увеличения общего количества пройденных тестов
      * @param score
      */
-    public void addQuiz(int score){
-        if ((score>=0)&&(score<=5)) {
+    public void addQuiz(int score) {
+        if ((score >= 0) && (score <= 5)) {
             totalScore += score;
             numberOfQuizzes++;
             System.out.println("Оценка за тест добавлена");
-        }
-        else {
+        } else {
             System.out.println("Оценка неккоректна");
         }
     }
@@ -46,7 +52,7 @@ public class Student {
      * Метод получения значения поля totalScore
      * @return возвращает общую сумму оценок
      */
-    public double getTotalScore(){
+    public double getTotalScore() {
         return totalScore;
     }
 
@@ -54,11 +60,10 @@ public class Student {
      * Метод получения среднего балла за пройденные тесты
      * @return возвращает среднее значение по оценкам
      */
-    public double getAverageScore(){
-        if(numberOfQuizzes!=0){
-            return totalScore/numberOfQuizzes;
-        }
-        else {
+    public double getAverageScore() {
+        if (numberOfQuizzes != 0) {
+            return totalScore / numberOfQuizzes;
+        } else {
             System.out.println("Количество тестов равно 0");
             return 0;
         }

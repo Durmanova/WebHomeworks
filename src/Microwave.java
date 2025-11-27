@@ -1,11 +1,24 @@
 /**
  * Класс, представляющий микроволновую печь, имеющую 4 кнопки:
- * */
+ *
+ */
 public class Microwave {
-    /**Поле времени готовки*/
+    /**
+     * Поле времени готовки
+     */
     private int time;
-    /**Поле уровня мощности*/
+    /**
+     * Поле уровня мощности
+     */
     private int level;
+    /**
+     * Константа первого уровня мощности
+     */
+    final private int LEVEL_ONE = 1;
+    /**
+     * Константа второго уровня мощности
+     */
+    final private int LEVEL_TWO = 2;
 
     /***
      * Конструктор - создание класса с заданными временем и уровнем
@@ -13,19 +26,16 @@ public class Microwave {
      * @param level - уровень мощности
      */
     public Microwave(int time, int level) {
-        if (time>=0) {
+        if (time >= 0) {
             this.time = time;
-        }
-        else {
+        } else {
             this.time = 0;
             System.out.println("Время готовки не может быть отрицательным");
         }
-        if ((level==1)||(level==2))
-        {
+        if ((level == LEVEL_ONE) || (level == LEVEL_TWO)) {
             this.level = level;
-        }
-        else {
-            this.level = 1;
+        } else {
+            this.level = LEVEL_ONE;
             System.out.println("Уровень мощности должен быть 1 или 2");
         }
     }
@@ -33,7 +43,7 @@ public class Microwave {
     /***
      * Конструктор - создание класса с пустыми параметрами
      */
-    public Microwave(){
+    public Microwave() {
         time = 0;
         level = 1;
     }
@@ -41,30 +51,29 @@ public class Microwave {
     /***
      * Метод увеличения времени готовки на 30 секнуд
      */
-    public void increaseTime(){
+    public void increaseTime() {
         int secondsIncreased = 30;
-        time+=secondsIncreased;
+        time += secondsIncreased;
         System.out.println("Время увеличено на 30 секнуд");
     }
 
     /***
      * Метод изменения уровня мощности
      */
-    public void powerSwitch(){
-        if (level ==1){
+    public void powerSwitch() {
+        if (level == 1) {
             level = 2;
-        }
-        else {
+        } else {
             level = 1;
         }
-        System.out.println("Уровень мощности изменен на "+level);
+        System.out.println("Уровень мощности изменен на " + level);
 
     }
 
     /***
      * Метод сброса времени готовки
      */
-    public void reset(){
+    public void reset() {
         time = 0;
         System.out.println("Сброс времени готовки");
     }
@@ -72,7 +81,7 @@ public class Microwave {
     /***
      * Метод вывода сообщения о готовке
      */
-    public void start(){
-        System.out.println("Готовка займет "+time+" секунд на уровне "+level);
+    public void start() {
+        System.out.println("Готовка займет " + time + " секунд на уровне " + level);
     }
 }
