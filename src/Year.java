@@ -3,11 +3,18 @@
  */
 
 public class Year {
-    public String isLeapYear(int year) {
-        if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
-            return "Год високосный";
-        } else {
-            return "Год невисокосный";
-        }
+    /**
+     * Поле года для проверки
+     */
+    private int year;
+    public Year(int year) {
+        this.year = year;
     }
+    public int getYear() {
+        return year;
+    }
+    public boolean isLeapYear() {
+        return (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0));
+    }
+
 }

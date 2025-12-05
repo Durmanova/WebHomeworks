@@ -3,13 +3,11 @@
  * для определения является ли число високосным или невисокосным
  */
 
-import java.util.Scanner;
-
 public class YearTest {
     public static void main(String[] args) {
-        Year checkYear = new Year();
-        Scanner in = new Scanner(System.in);
-        System.out.print("Введите год: ");
-        System.out.print(checkYear.isLeapYear(in.nextInt()));
+        Year leapYear = new Year(2004);
+        Year regularYear = new Year(2005);
+        System.out.println("Год "+leapYear.getYear()+" "+ (leapYear.isLeapYear() ? "високосный" : "невисокосный"));
+        System.out.println("Год "+regularYear.getYear()+" "+ (regularYear.isLeapYear() ? "високосный" : "невисокосный"));
     }
 }
